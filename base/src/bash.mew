@@ -1,0 +1,19 @@
+[Informations]
+name=bash
+version=5.2
+type=src
+url=https://ftp.gnu.org/gnu/$NAME/$NAME-$VERSION.tar.gz
+
+[Description]
+Shell
+
+[Download]
+curl -L $URL | tar -xz
+
+[install]
+./configure --prefix=/usr             \
+            --without-bash-malloc     \
+            --with-installed-readline \
+            --docdir=/usr/share/doc/bash-5.2
+make
+make install
